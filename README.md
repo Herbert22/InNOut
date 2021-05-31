@@ -1,5 +1,5 @@
 # innout
-## Sistema de ponto eletronico com php, bootsprap e mysql
+## Sistema de ponto eletronico com php, mysql e bootsprap
 
 Este sistema é o módulo final do curso de "PHP 7 Completo - Curso de Desenvolvimento Web 2021 + Projetos" que está hospedado na Udemy(https://www.udemy.com/course/php-7-completo/).
 

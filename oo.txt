@@ -1,0 +1,23 @@
+
+"Funções" são chamadas de "Métodos" quando dentro de uma Classe.
+
+Quando é criado um Dado apartir da Classe é chamado de Objeto. 
+
+Objeto == Instâcia
+
+As "classes" podem criar vários "Objeto(Instâcias)" mas isso não é recíproco. 
+    Exs.: 
+        Ou sejá apartir de o molde pode-se criar vários bonecos.
+        Com uma planta de casa pode-se criar várias casas mesmo que com características(porta, janela) diferentes.
+
+
+"Construtor" é um método especial que ele é focado em criar Objetos(Instâcias) atravez de uma classe.
+    Ex.: Class:
+
+        Produto             Construtor               Construtor
+
+        *Nome       |        *Notebook         |     *Celular
+        *Preço      |        *R$ 4.200         |     *R$ 1.800
+        *Desconto   |        *15%              |     *35%
+
+
