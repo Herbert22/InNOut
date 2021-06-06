@@ -25,8 +25,8 @@
                 <div class="form-group">
                     <label for="email">E-mail</label>
                     <input type="email" id="email" name="email" class="form-control
-                        <?= $errors['email'] ? 'is-invalid' : '' ?>"
-                        value="<?= $email ?>"
+                    <?= isset($errors['email']) ? 'is-invalid' : '' ?>"
+                    value="<?= $email ?>"
                     placeholder="Informe o e-mail" autofocus>
                     <div class="invalid-feedback">
                         <?= $errors['email'] ?>
@@ -34,8 +34,8 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Senha</label>
-                    <input type="password" id="password" name="password" class="form-control" 
-                    <?= $errors['password'] ? 'is-invalid' : '' ?>
+                    <input type="password" id="password" name="password" class="form-control 
+                    <?= isset($errors['password']) ? 'is-invalid' : '' ?>"
                     placeholder="Informe a senha">
                     <div class="invalid-feedback">
                         <?= $errors['password'] ?>
