@@ -2,6 +2,7 @@
 $errors = [];
 $message = [];
 $email = '';
+$exception = '';
 if($exception) {
     $message = [
         'type' => 'error',

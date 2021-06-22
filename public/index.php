@@ -11,4 +11,4 @@ if($uri === '/' || $uri === '' || $uri === '/index.php') {
     $uri = '/day_records.php';
 }
 
-require_once(CONTROLLERS_PATH . "/{$uri}");
+require_once(CONTROLLER_PATH . "/{$uri}");

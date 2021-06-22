@@ -9,7 +9,7 @@ class Login extends Model {
         }
 
         if(!$this->password) {
-            $errors['password'] = 'Por favor, informe a senha.';
+            $errors['password'] = 'Por favor, informe a senha.'; 
         }
 
         if(count($errors) > 0) {

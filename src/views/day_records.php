@@ -5,10 +5,16 @@
             'Mantenha seu ponto consistente!',
             'icofont-check-alt'
         );
+
+        $date = (new Datetime())->getTimestamp();
+        // strftime — Formata uma hora/data de acordo com as configurações locais
+        $today = strftime('%d de %B de %Y', $date);
+
+        include(TEMPLATE_PATH . "/messages.php");
     ?>
     <div class="card">
         <div class="card-header">
-            <h3>10 de Janeiro de 2021</h3>
+            <h3><?= $today ?></h3>
             <p class="mb-0">Os batimentos efetuados hoje</p>
         </div>
         <div class="card-body">

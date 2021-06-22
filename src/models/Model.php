@@ -18,7 +18,8 @@ class Model {
     }
 
     public function __get($key) {
-        return $this->values[$key];
+        // return $this->values[$key];
+        return isset($this->values[$key]) ? $this->values[$key] : null;
     }
 
     public function __set($key, $value) {
@@ -55,6 +56,18 @@ class Model {
         }
     }
 
+    public function save() {
+        // implode — Junta elementos de uma matriz em uma string
+        $sql = "INSERT INTO " . static::$tableName . " (" . implode(",", static::$columns) . ") VALUES (";
+        foreach(static::$columns as $col) {
+            $sql .= static::getFormatedValue($this->$col) . ",";
+        }
+        // strlen — Retorna o tamanho de uma string
+        $sql[strlen($sql) - 1] = ')';
+        $id = Database::executeSQL($sql);
+        $this->id = $id;
+    }
+
     private static function getFilters($filters) {
         $sql = '';
         if(count($filters) > 0) {
@@ -67,10 +80,12 @@ class Model {
     }
 
     private static function getFormatedValue($value) {
+        // is_null — Informa se a variável é null
         if(is_null($value)){
             return "null";
-        } elseif(gettype($value) === 'string'){
-            return "'${value}'";
+        // gettype — Obtém o tipo da variável
+            } elseif(gettype($value) === 'string') {
+        return "'${value}'";
         }else {
             return $value;
         }
