@@ -1,0 +1,4 @@
+<?php
+// Controller temporário
+
+loadModel('')

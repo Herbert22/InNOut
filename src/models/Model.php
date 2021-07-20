@@ -56,7 +56,7 @@ class Model {
         }
     }
 
-    public function save() {
+    public function insert() {
         // implode — Junta elementos de uma matriz em uma string
         $sql = "INSERT INTO " . static::$tableName . " (" . implode(",", static::$columns) . ") VALUES (";
         foreach(static::$columns as $col) {
@@ -68,8 +68,19 @@ class Model {
         $this->id = $id;
     }
 
+    public function update() {
+        $sql = "UPDATE " . static::$tableName . " SET ";
+        foreach(static::$columns as $col) {
+            $sql .= " ${col} = " . static::getFormatedValue($this->$col) . ",";
+        }
+        $sql[strlen($sql) - 1] = ' ';
+        $sql .= "WHERE id = {$this->id}";
+        Database::executeSQL($sql);
+    }
+
     private static function getFilters($filters) {
         $sql = '';
+        // count — Conta o número de elementos de uma variável, ou propriedades de um objeto
         if(count($filters) > 0) {
             $sql .= " WHERE 1 = 1";
             foreach($filters as $column => $value) {

@@ -21,3 +21,27 @@ function getNextDay($date) {
     $inputDate->modify('+1 day');
     return $inputDate;
 }
+
+function sumIntervals($interval1, $interval2) {
+    $date = new DateTime('00:00:00');
+    // add - Adiciona uma quantidade de dias, meses, anos, horas, minutos e segundos a um objeto DateTime
+    $date->add($interval1);
+    $date->add($interval2);
+    // diff - Retorna a diferença entre dois objetos que implementam a classe DateTimeInterface.
+    return (new DateTime('00:00:00'))->diff($date);
+}
+
+function subtractInterval($interval1, $interval2) {
+    $date = new DateTime('00:00:00');
+    $date->add($interval1);
+    $date->sub($interval2);
+    return (new DateTime('00:00:00'))->diff($date);
+}
+
+function getDateFromInterval($interval) {
+    return new DateTimeImmutable($interval->format('%H:%i:%s'));
+}
+
+function getDateFromString($str) {
+    return DateTimeImmutable::createFromFormat('H:i:s', $str);
+}

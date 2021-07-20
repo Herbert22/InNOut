@@ -182,8 +182,8 @@ aside.sidebar .info .main {
 main.content {
     background-color: #FFF;
     grid-area: content;
-    margin: 20px;
-    padding: 20px;
+    margin: 15px;
+    padding: 15px;
     border-radius: 5px;
     box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
 }
