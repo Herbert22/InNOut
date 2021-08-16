@@ -5,7 +5,7 @@
 // mysqli — Representa uma conexão entre PHP e um banco de dados MySQL.
 
 class Database {
-
+ 
     public static function getConnection() {
         $envPath = realpath(dirname(__FILE__) . '/../env.ini');
         $env = parse_ini_file($envPath);
